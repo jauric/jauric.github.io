@@ -1,0 +1,138 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');*/
+
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-VariableFont_opsz\,wght.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Sora";
+    src: url("../fonts/Sora-VariableFont_wght.woff2") format("woff2");
+
+}
+
+
+html {
+    /*Ensuring responsive font sizing across screen sizes*/
+    font-size: clamp(12px, 2vw, 20px);
+}
+
+:root {
+
+    --bg-color: #EFEBE5;
+    --text-color: #21201f;
+    --heading-color: #21201f;
+    --hover-color: #0000ff;
+    --nav-color: #3c3a39;
+
+    --text-weight: 400;
+    --heading-weight: 600;
+    --title-weight: 700;
+    
+    --heading-letter-spacing: 0.01rem;
+    --text-font: "Inter";
+    --header-font: "Sora";
+    --margin-small: 0.5rem;
+    --margin-big: 2.5rem;
+}
+
+body {
+    background-color: var(--bg-color);
+    max-width: 650px;
+    margin: 3rem;
+}
+
+
+p, a, table {
+    font-family: var(--text-font);
+    font-weight: var(--text-weight); 
+    font-size: 0.85rem;
+    color: var(--text-color);
+    text-decoration: none;
+    line-height: 1.25;
+    margin-top: var(--margin-small);
+    margin-bottom: var(--margin-small);
+    letter-spacing: -0.01rem;
+    text-align: justify;
+}
+
+img {
+    margin-top: var(--margin-small);
+    margin-bottom: var(--margin-small);
+}
+
+.textlink {
+    text-decoration: underline;
+}
+
+.list {
+    display: list-item;
+    list-style-type: square;
+    margin-left: 1rem;
+    margin-bottom: -0.40rem;
+    letter-spacing: 0.0rem;
+}
+
+.standout {
+    font-size: 0.8rem;
+    letter-spacing: 0.0rem;
+    text-transform: uppercase;
+}
+
+.nav {
+    font-weight: var(--text-weight);
+    margin-right: 1rem;
+    color: var(--nav-color);
+}
+
+.nav-current {
+    font-weight: var(--title-weight);
+    margin-right: 1rem;
+}
+
+a:hover {
+    color: var(--hover-color);
+}
+
+h1 {
+    font-family: var(--header-font);
+    font-weight: var(--title-weight);
+    font-size: 2rem;
+    color: var(--heading-color);
+    text-decoration: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    letter-spacing: var(--heading-letter-spacing);
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: var(--header-font);
+    font-weight: var(--title-weight); 
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    margin-bottom: 0rem;
+    letter-spacing: var(--heading-letter-spacing);
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: var(--header-font);
+    font-weight: var(--heading-weight); 
+    color: var(--heading-color);
+    font-size: 1rem;
+    margin-top: var(--margin-big);
+    margin-bottom: var(--margin-small);
+    text-align: justify;
+    text-transform: uppercase;
+}
+
+header {
+    margin-bottom: var(--margin-big);
+}
+
+footer {
+    margin-top: var(--margin-big);
+}
