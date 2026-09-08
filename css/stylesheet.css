@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Syne:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@400..800&family=TASA+Orbiter:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
 @font-face {
     font-family: "Inter";
     src: url("../fonts/Inter-VariableFont_opsz\,wght.woff2") format("woff2");
@@ -10,129 +17,136 @@
 }
 
 
-html {
-    /*Ensuring responsive font sizing across screen sizes*/
-    font-size: clamp(12px, 2vw, 20px);
-}
-
 :root {
 
-    --bg-color: #EFEBE5;
+    --bg-color: #eaeaea;
     --text-color: #21201f;
     --heading-color: #21201f;
     --hover-color: #0000ff;
-    --nav-color: #3c3a39;
+    --nav-color: #078b95;
 
     --text-weight: 350;
-    --heading-weight: 600;
-    --title-weight: 700;
+    --heading-weight: 800;
+    --title-weight: 800;
     
-    --heading-letter-spacing: 0.01rem;
+    --heading-letter-spacing: -0.1rem;
     --text-font: "Inter";
-    --header-font: "Sora";
-    --margin-small: 0.5rem;
-    --margin-big: 2.5rem;
+    --header-font: "TASA Orbiter";
+    --margin-big: 1.75rem;
+    --margin-small: 0.75rem;
+}
+
+html {
+    /*Ensuring responsive font sizing across screen sizes*/
+    font-size: clamp(0.9rem, 1.3vw, 2rem);
 }
 
 body {
     background-color: var(--bg-color);
-    max-width: 650px;
-    margin: 3rem;
+    max-width: 500px;
+    margin: 5vw;
 }
 
 
 p, a, table {
     font-family: var(--text-font);
     font-weight: var(--text-weight); 
-    font-size: 0.85rem;
+    font-size: 1rem;
     color: var(--text-color);
     text-decoration: none;
     line-height: 1.25;
-    margin-top: var(--margin-small);
-    margin-bottom: var(--margin-small);
-    letter-spacing: -0.01rem;
-    text-align: justify;
-}
-
-img {
-    margin-top: var(--margin-small);
-    margin-bottom: var(--margin-small);
-}
-
-.textlink {
-    text-decoration: underline;
-}
-
-.list {
-    display: list-item;
-    list-style-type: square;
-    margin-left: 1rem;
-    margin-bottom: -0.40rem;
-    letter-spacing: 0.0rem;
-}
-
-.standout {
-    font-size: 0.8rem;
-    letter-spacing: 0.0rem;
-    text-transform: uppercase;
-}
-
-.standout-header {
-    font-size: 0.8rem;
-    letter-spacing: 0.0rem;
-    text-transform: uppercase;
-    margin-bottom: var(--margin-big);
-}
-
-.nav {
-    font-weight: var(--text-weight);
-    margin-right: 1rem;
-    color: var(--nav-color);
-}
-
-.nav-current {
-    font-weight: var(--title-weight);
-    margin-right: 1rem;
+    margin: 0;
+    padding: 0;
+    text-align: left;
 }
 
 a:hover {
-    color: var(--hover-color);
+    text-decoration: underline;
+    color: var(--hover-color)
 }
 
 h1 {
     font-family: var(--header-font);
     font-weight: var(--title-weight);
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--heading-color);
     text-decoration: none;
     margin-top: 0;
     margin-bottom: 0;
-    letter-spacing: var(--heading-letter-spacing);
-    text-transform: uppercase;
+    line-height: 0.9;
 }
 
 h2 {
     font-family: var(--header-font);
-    font-weight: var(--title-weight); 
+    font-weight: var(--heading-weight);
     font-size: 1.5rem;
-    color: var(--heading-color);
-    margin-bottom: 0rem;
-    letter-spacing: var(--heading-letter-spacing);
-    text-transform: uppercase;
+    color: var(--nav-color);
+    text-decoration: none;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 h3 {
-    font-family: var(--header-font);
-    font-weight: var(--heading-weight); 
-    color: var(--heading-color);
+    font-family: "TASA Orbiter";
+    font-weight: 600;
     font-size: 1rem;
+    color: var(--text-color);
     margin-top: var(--margin-big);
-    margin-bottom: var(--margin-small);
-    text-align: justify;
+    margin-bottom: 0;
+}
+
+.project_title {
+    font-weight: 600;
+    color: var(--text-color);
+    font-family: "TASA Orbiter";
+}
+
+.bottom_margin_l {
+    margin-bottom: var(--margin-big);
+}
+
+.standout {
+    font-family: "TASA Orbiter";
+    font-size: 0.9rem;
     text-transform: uppercase;
 }
 
-header {
+.quote {
+    font-family: var(--text-font);
+    margin-top: var(--margin-big);
+    margin-bottom: var(--margin-big);
+}
+
+.logo {
+    font-family: "Inter";
+    margin-bottom: var(--margin-big);
+    text-transform: uppercase;
+}
+
+.list {
+    display: block;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  position: relative;
+  padding-inline-start: 1.25rem;
+}
+
+li::before {
+  content: "•";
+  position: absolute;
+  inset-inline-start: 0;
+  width: 0.75rem;
+  text-align: center;
+}
+
+header{
     margin-bottom: var(--margin-big);
 }
 
