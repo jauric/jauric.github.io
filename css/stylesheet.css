@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Syne:wght@400..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@400..800&family=TASA+Orbiter:wght@400..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=TASA+Orbiter:wght@400..800&display=swap');
+
 
 @font-face {
     font-family: "Inter";
@@ -18,33 +16,51 @@
 
 
 :root {
-
     --bg-color: #eaeaea;
     --text-color: #21201f;
-    --heading-color: #21201f;
     --hover-color: #0000ff;
-    --nav-color: #078b95;
 
     --text-weight: 350;
     --heading-weight: 800;
     --title-weight: 800;
-    
-    --heading-letter-spacing: -0.1rem;
+
     --text-font: "Inter";
     --header-font: "TASA Orbiter";
-    --margin-big: 1.75rem;
-    --margin-small: 0.75rem;
+    
+    /* Responsive spacing - scales from 0.75rem on mobile to 2rem on large screens */
+    --margin-horizontal: clamp(0.75rem, 5vw, 2rem);
+
+    /* Top/bottom margin for content */
+    --margin-vertical: clamp(1.5rem, 4vw, 2.25rem);
 }
 
 html {
     /*Ensuring responsive font sizing across screen sizes*/
-    font-size: clamp(0.9rem, 1.3vw, 2rem);
+    font-size: 100%;
 }
 
 body {
+    font-size: 1rem;
     background-color: var(--bg-color);
-    max-width: 500px;
-    margin: 5vw;
+    margin: var(--margin-vertical) var(--margin-horizontal);
+}
+
+/* Main layout: left-aligned with constraint width */
+body.main-layout {
+    max-width: clamp(20rem, 100%, 45rem);
+    margin-left: var(--margin-horizontal);
+    margin-right: var(--margin-horizontal);
+    margin-top: var(--margin-vertical);
+    margin-bottom: var(--margin-vertical);
+}
+
+/* Content layout: centered with larger max-width */
+body.content-layout {
+    max-width: clamp(20rem, 100%, 75rem);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: var(--margin-vertical);
+    margin-bottom: var(--margin-vertical);
 }
 
 
@@ -69,7 +85,7 @@ h1 {
     font-family: var(--header-font);
     font-weight: var(--title-weight);
     font-size: 2.5rem;
-    color: var(--heading-color);
+    color: var(--text-color);
     text-decoration: none;
     margin-top: 0;
     margin-bottom: 0;
@@ -80,7 +96,7 @@ h2 {
     font-family: var(--header-font);
     font-weight: var(--heading-weight);
     font-size: 1.5rem;
-    color: var(--nav-color);
+    color: var(--text-color);
     text-decoration: none;
     margin-top: 0;
     margin-bottom: 0;
@@ -91,7 +107,7 @@ h3 {
     font-weight: 600;
     font-size: 1rem;
     color: var(--text-color);
-    margin-top: var(--margin-big);
+    margin-top: var(--margin-vertical);
     margin-bottom: 0;
 }
 
@@ -99,10 +115,11 @@ h3 {
     font-weight: 600;
     color: var(--text-color);
     font-family: "TASA Orbiter";
+    margin-top: var(--margin-vertical);
 }
 
-.bottom_margin_l {
-    margin-bottom: var(--margin-big);
+.project_description {
+    margin-bottom: var(--margin-vertical);
 }
 
 .standout {
@@ -111,20 +128,18 @@ h3 {
     text-transform: uppercase;
 }
 
-.quote {
-    font-family: var(--text-font);
-    margin-top: var(--margin-big);
-    margin-bottom: var(--margin-big);
-}
-
 .logo {
     font-family: "Inter";
-    margin-bottom: var(--margin-big);
+    margin-bottom: var(--margin-vertical);
     text-transform: uppercase;
 }
 
-.list {
+.main_page_navigation {
     display: block;
+}
+
+.margin_bottom {
+    margin-bottom: var(--margin-vertical);
 }
 
 ul {
@@ -147,9 +162,9 @@ li::before {
 }
 
 header{
-    margin-bottom: var(--margin-big);
+    margin-bottom: var(--margin-vertical);
 }
 
 footer {
-    margin-top: var(--margin-big);
+    margin-top: var(--margin-vertical);
 }
