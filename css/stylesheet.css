@@ -1,16 +1,12 @@
-
-@import url('https://fonts.googleapis.com/css2?family=TASA+Orbiter:wght@400..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
-
 @font-face {
     font-family: "Inter";
     src: url("../fonts/Inter-VariableFont_opsz\,wght.woff2") format("woff2");
 }
 
+@font-face {
+    font-family: "TASA Orbiter";
+    src: url("../fonts/TASAOrbiter-VariableFont_wght.woff2") format("woff2");
+}
 
 :root {
     --text-weight: 350;
