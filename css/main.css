@@ -1,0 +1,11 @@
+body {
+    max-width: clamp(20rem, 100%, 30rem);
+    margin-left: var(--margin-horizontal);
+    margin-right: var(--margin-horizontal);
+    margin-top: var(--margin-vertical);
+    margin-bottom: var(--margin-vertical);
+}
+
+.main_navigation {
+    display: block;
+}

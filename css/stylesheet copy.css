@@ -1,0 +1,189 @@
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-VariableFont_opsz\,wght.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "TASA Orbiter";
+    src: url("../fonts/TASAOrbiter-VariableFont_wght.woff2") format("woff2");
+}
+
+:root {
+    --text-weight: 350;
+    --bold-weight: 600;
+    --title-weight: 800;
+    --primary-font: "Inter";
+    --secondary-font: "TASA Orbiter";
+
+    --bg-color: #EFEBE5;
+    --text-color: #1d1d1b;
+    --hover-color: #4d00f2;
+    --textlink_color: #10b750;
+
+    /* Responsive spacing - scales from 0.75rem on mobile to 2rem on large screens */
+    --margin-horizontal: clamp(0.75rem, 5vw, 2rem);
+
+    /* Top/bottom margin for content */
+    --margin-vertical: clamp(1.5rem, 4vw, 2rem);
+}
+
+html {
+    /*Ensuring responsive font sizing across screen sizes*/
+    font-size: 100%;
+}
+
+body {
+    font-size: 1rem;
+    margin: var(--margin-vertical) var(--margin-horizontal);
+    background-color: var(--bg-color);
+}
+
+/* Main layout: left-aligned with constraint width */
+body.main-layout {
+    max-width: clamp(20rem, 100%, 30rem);
+    margin-left: var(--margin-horizontal);
+    margin-right: var(--margin-horizontal);
+    margin-top: var(--margin-vertical);
+    margin-bottom: var(--margin-vertical);
+}
+
+/* Content layout: centered with larger max-width */
+body.content-layout {
+    max-width: 38rem;
+    width: calc(100% - (2 * var(--margin-horizontal)));
+    margin: var(--margin-vertical) auto;
+}
+
+/* Add paragraph margins for the content pages only */
+body.content-layout p {
+    margin-bottom: calc(var(--margin-vertical)/2);
+    text-align: justify;
+}
+
+body.content-layout ul {
+    margin-bottom: calc(var(--margin-vertical)/2);
+}
+
+body.content-layout table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0 0 calc(var(--margin-vertical)/2) 0;   /* top, right, bottom, left */
+}
+
+body.content-layout tr {
+    vertical-align: top;
+}
+
+body.content-layout tr.row_borders td {
+    border-top: 1px solid var(--text-color);
+    border-bottom: 1px solid var(--text-color);
+}
+
+/* Define standard parameters below */
+
+p, a, table, ul {
+    font-family: var(--primary-font);
+    font-weight: var(--text-weight); 
+    font-size: 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    line-height: 1.35;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+a.textlink {
+    color: var(--textlink_color) ;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: var(--hover-color);
+    text-decoration: underline;
+}
+
+h1 {
+    font-family: var(--secondary-font);
+    font-weight: var(--title-weight);
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+h2 {
+    font-family: var(--secondary-font);
+    font-weight: var(--title-weight);
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-top: var(--margin-vertical);
+    margin-bottom: calc(var(--margin-vertical)/2);
+}
+
+h3 {
+    font-family: var(--secondary-font);
+    font-weight: var(--bold-weight);
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-top: var(--margin-vertical);
+    margin-bottom: 0;
+}
+
+img {
+    margin-top: calc(var(--margin-vertical)/2);
+    margin-bottom: calc(var(--margin-vertical)/2);
+    max-width: 100%;
+    height: auto;
+}
+
+.standout {
+    font-family: var(--secondary-font);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.logo {
+    font-family: var(--primary-font);
+    margin-bottom: var(--margin-vertical);
+    text-transform: uppercase;
+    line-height: 0.9;
+}
+
+.main_navigation {
+    display: block;
+}
+
+.margin_bottom {
+    display: block;
+    margin-bottom: var(--margin-vertical);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  position: relative;
+  padding-inline-start: 1.25rem;
+}
+
+li::before {
+  content: "•";
+  position: absolute;
+  inset-inline-start: 0;
+  width: 0.75rem;
+  text-align: center;
+}
+
+header{
+    margin-bottom: var(--margin-vertical);
+}
+
+footer {
+    margin-top: var(--margin-vertical);
+}

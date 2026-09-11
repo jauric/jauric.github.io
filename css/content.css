@@ -1,0 +1,30 @@
+body {
+    max-width: 38rem;
+    width: calc(100% - (2 * var(--margin-horizontal)));
+    margin: var(--margin-vertical) auto;
+}
+
+p {
+    margin-bottom: calc(var(--margin-vertical)/2);
+    text-align: justify;
+}
+
+h3, ul {
+    margin-bottom: calc(var(--margin-vertical)/2);
+}
+
+table {
+    width: calc(100% + 2rem);
+    margin: 0 -1rem;
+    border-collapse: separate;
+    border-spacing: 1rem 0;
+}
+
+tr {
+    vertical-align: top;
+}
+
+img.long_img {
+    max-height: 40vw;
+    align-self: center;
+}
