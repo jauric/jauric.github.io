@@ -6,6 +6,12 @@ body {
     margin-bottom: var(--margin-vertical);
 }
 
-.main_navigation {
-    display: block;
+.logo {
+    font-family: var(--primary-font);
+    font-weight: var(--logo-weight);
+    margin-bottom: var(--margin-vertical);
+    text-transform: uppercase;
+    line-height: 1;
 }
+
+

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @font-face {
     font-family: "Inter";
     src: url("../fonts/Inter-VariableFont_opsz\,wght.woff2") format("woff2");
@@ -12,13 +14,13 @@
     --text-weight: 350;
     --bold-weight: 600;
     --title-weight: 800;
+    --logo-weight: 1000;
     --primary-font: "Inter";
     --secondary-font: "TASA Orbiter";
 
     --bg-color: #EFEBE5;
     --text-color: #1d1d1b;
     --hover-color: #4d00f2;
-    --textlink_color: #10b750;
 
     --margin-horizontal: clamp(0.75rem, 5vw, 2rem);
     --margin-vertical: clamp(1.5rem, 4vw, 2rem);
@@ -40,16 +42,26 @@ p, a, table, ul {
     font-weight: var(--text-weight);
     font-size: 1rem;
     color: var(--text-color);
-    text-decoration: none;
     line-height: 1.35;
     margin: 0;
     padding: 0;
     text-align: left;
 }
 
-a.textlink {
-    color: var(--textlink_color);
+a {
     text-decoration: underline;
+    text-decoration-color: #afafa3;
+    text-decoration-thickness: 0.075rem;
+    text-underline-offset: 0.25rem;
+}
+
+a.link_list {
+    display:block;
+}
+
+a.navigation {
+    display: block;
+    text-decoration: none;
 }
 
 a:hover {
@@ -76,7 +88,7 @@ h2 {
     margin-bottom: calc(var(--margin-vertical)/2);
 }
 
-h3 {
+h3, .project_title {
     font-family: var(--secondary-font);
     font-weight: var(--bold-weight);
     font-size: 1rem;
@@ -98,16 +110,9 @@ img {
     text-transform: uppercase;
 }
 
-.logo {
-    font-family: var(--primary-font);
-    margin-bottom: var(--margin-vertical);
-    text-transform: uppercase;
-    line-height: 0.9;
-}
-
 .margin_bottom {
     display: block;
-    margin-bottom: var(--margin-vertical);
+    margin-bottom: calc(var(--margin-vertical)/2);
 }
 
 ul {
