@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Johannes Aurich</title>
+        <link rel="stylesheet" href="../../../css/base.css">
+        <link rel="stylesheet" href="../../../css/content.css">
+    </head>
+
+    <body>    
+        
+
+        <header>
+            <a href="../../../technology.html" class="navigation standout margin_bottom"> < Technology </a>
+            <h1>Thermodynamic cost limits of renewable base industries</h1>
+            <hr>
+            <p class="standout"> 2022 | Version 2.6 (Updated Nov 2026) </p>
+            <p class="standout"> This article has been in the works since 2022, when I started questioning sector narratives at the peak of the hydrogen hype.
+                                 I've learned a lot during the last years and certainly enough happened that required a constant re-evaluation of my opinions.
+                                 Below, you can finally read my conclusion after more than 4 years in the cleantech industry. </p>
+        </header>
+
+
+        <main>                                                
+            <p> Today's industrial and transport sectors depend on crude oil, coal, and natural gas; either as carbon feedstock, reducing agent, or as energy carrier. 
+                The reliance on those fossil resources is not only a key challenge for the elimination of carbon dioxide emissions but also national sovereignty due 
+                to geopolitical dependency on a few key suppliers.</p>
+
+            <p> To overcome these issues, lot of effort has been invested to develop non-fossil production processes for key industrial commodities: ammonia (NH3) for fertilizers; methanol (CH4O) as platform chemical 
+                and potential heavy-transport and shipping fuel; sustainable aviation/jet fuel (SAF) for mid- and long-range aviation; as well as steel.</p>   
+
+            <p> The usual approach is to produce them from renewable energy sources combined with water, nitrogen from air, and CO2 from direct air capture (DAC) or biomass as raw materials. 
+                However, the derived non-fossil commodities are fighting a commercial uphill battle against dead-cheap fossil incumbents and therefore see only very slow 
+                to no market adoption, despite their frequently receited importance. It is often talked about economies of scale, that costs will come down as soon as 
+                hardware and operations reached the required magnitude and that we just need to spend more subsidies to achieve that.</p>
+
+            <p> Below, I will share a very simple exploration of process economics for the mentioned key non-fossil commodities and will discuss how realistic it is that they will see
+                fast and large scale adoption. At the end, I will also share a few thoughts on what policymakers and societies overall should focus on. </p>
+            
+            
+            <h2> Physics determines the absolute cost minimum </h2>
+            <p> The cost of a product depends on many factors: capital investments into hardware and land for the plant; feedstocks, utilities, and energy consumption; 
+                personnel, maintenance, and business expenses. You can tweak all of them, but what's the absolut minimum?</p>
+
+            <p> Let's imagine a perfect edge case scenario: land is already owned and hardware so advanced that it's made from cheap, highly durable material 
+                (capital investments and maintenance negligible) and fully automated (no personnel). The production process has perfect efficiency,
+                loss-free conversion, and doesn't need any utilities. Feedstocks are sourced for free in perfect condition and business operations are streamlined to zero expense. What is left?
+                The inevitable amount of energy required by thermodynamics to drive the desired chemical conversions. The related energy expenses are the cost floor. </p>
+
+            <p> This energy is represented by the enthalpy of reaction ΔHr, which depends on temperature and pressure and will reach its theoretical minimum for a single-step 
+                conversion at ambient conditions. The reason is that ambient conditions represent the initial and end state of the conversion process: feedstocks like nitrogen,
+                water, CO2, or iron ore are won from the ambient environment and products like steel, methanol, or jet fuel are usually stored and handled at ambient conditions.
+                Any deviation from ambient conditions during processing, storage, or handling will require additional energy input for heating, cooling, or compression; and multi-step
+                processing usually complicates energy recovery. </p> 
+
+            <h2> Calculating the thermodynamic cost floor </h2>
+            <p> Assuming a reversible process as described above, we can calculate the enthalpies of reaction ΔHr using Hess' law and the enthalpies of formation ΔHf
+                of all chemical species involved in the conversion. Since ambient conditions as reference for minimum conversion energy are roughly equal to thermodynamic standard 
+                conditions, the whole exercise simplifies to determining the standard enthalpy of reaction ΔHr⁰ from textbook standard enthalpies of formation ΔHf⁰ [1].</p> 
+
+            <p> ΔHr⁰ = Σ ΔHf⁰ (products) - Σ ΔHf⁰ (reactants)   </p>
+
+            <p> Standard conditions are defined as 298.15 K (25 °C) and 100 kPa (1 bar) [1], [3] references NIST-JANAF tables with the same definition. 
+                Molar masses for unit conversion are taken from the same references. The following table summarizes the relevant chemical reactions and standard enthalpies. </p>
+
+            <table>
+                <tr style="font-weight: 500;">
+                  <td>Commodity</td>
+                  <td> Reactants </td>
+                  <td> Products </td>
+                  <td>ΔHr⁰ [MWh/t]</td>
+                </tr>
+                <tr>
+                  <td>Ammonia</td>
+                  <td>0.5 N₂ + 1.5 H₂O</td>
+                  <td>NH₃ + 0.75 O₂</td>
+                  <td>6.240</td>
+                </tr>
+                <tr>
+                  <td>Methanol</td>
+                  <td>CO₂ + 2 H₂O</td>
+                  <td>CH₄O + 1.5 O₂</td>
+                  <td>6.300</td>
+                </tr>
+                <tr>
+                  <td>Jet Fuel</td>
+                  <td>11.2 CO₂ + 10.75 H₂O</td>
+                  <td>C₁₁.₂H₂₁.₅ + 16.6 O₂</td>
+                  <td>12.79</td>
+                </tr>
+                <tr>
+                  <td>Steel</td>
+                  <td>0.5 Fe₂O₃</td>
+                  <td> Fe + 0.75 O₂</td>
+                  <td>2.390 </td>
+                </tr>
+            </table>
+           
+           
+            <p> <span class="standout">Note on jet fuel </span> As refined curde oil product, composition naturally varies and is treated as its typical molecular average
+                C₁₁.₂H₂₁.₅ with M = 156 g/mol [2, p. 42]. Using [2, p. 55f.], it is assumed that jet fuel's ΔHf⁰ = 70 kcal/mol = 292.88 kJ/mol. </p>
+
+            <p> <span class="standout">Note on steel </span> To be more representative of the actual process, the enthalpy for steelmaking considers not only the reduction
+                of a pure Fe₂O₃ (hematite) feedstock but also the energy for heating amd melting of iron for alloying. It is assumed that molten steel is cast into final 
+                shape without any heat recovery during cooldown [3, p.12]. Ignoring heat recovery is justified by the very high implementation hurdles and the the strict 
+                cooldown speed requirements to achieve defined material properties. </p>
+            
+            <h2> When do non-fossil commodities break even?</h2>
+            <p> Now that we know the minimum amount of energy required to produce the non-fossil commodities (and still assume it is the only factor influencing production costs),
+                we can determine the highest acceptable input energy price so that non-fossil commodities break even with their fossil counterparts. This is calculated as: 
+                break-even energy price = fossil production costs / ΔHr⁰.</p>
+          
+          
+          <table>
+                <tr style="font-weight: 500;">
+                  <td >Commodity</td>
+                  <td> Fossil Production Costs [USD/t] </td>
+                  <td> Energy Price [USD/MWh] </td>
+                </tr>
+                <tr>
+                  <td >Ammonia</td>
+                  <td> 110.0 - 340.0 [4, p. 16] </td>
+                  <td> 17.63 - 54.49 </td>
+                </tr>
+                <tr>
+                  <td >Methanol</td>
+                  <td> 100.0 - 250.0 [5, p.4] </td>
+                  <td> 15.87 - 39.68 </td>
+                </tr>
+                <tr>
+                  <td >Jet Fuel</td>
+                  <td> < 375.0 - 1000 [9]* </td>
+                  <td> < 29.31 - 78.19* </td>
+                </tr>
+                <tr>
+                  <td >Steel</td>
+                  <td> 400 - 800 [6, p.15]</td>
+                  <td> 167.4 - 334.7 </td>
+                </tr>
+            </table>          
+
+          <p> <span class="standout">*Note on jet fuel</span> Reliable figures for production costs were not available, market prices (2010-2020) were used as proxy instead. 
+              They are given as 0.3 - 0.8 USD/liter [9] and converted to USD/t using a jet fuel density of 0.8 g/cm³ [2, p.22ff]. Energy prices to break even with production
+              costs will be lower than stated because production costs are (ideally) below than market prices.
+
+          <p> The listed fossil production costs represent global figures pre-2022 (ammonia), pre-2021 (methanol), pre-2022 (steel), and 
+              2010-2020 (jet fuel). Those costs and related market prices have increased significantly until 2026 due to multiple global supply chain disruptions, most
+              importantly the post-COVID19 recovery in mid-late 2021, the Russian invasion of Ukraine (since Feb 2022), and the US-Israel-Iran war (since Feb 2026). The
+              resulting break-even energy prices therefore also increased to benefit non-fossil processes, however price shocks were very uneven globally and hit Europe particularly 
+              hard due to its significant dependence on imports. This will be further discussed below.</p>
+
+          <h2> Costs of renewable energy supply </h2>
+
+          <p> The next question is how the required break-even energy prices compare to energy production costs (not market prices!), the overlap indicates how realistic and economically 
+              sustainable production of non-fossil commodites is without further state intervention. Below, the levelized costs of energy (LCOE) for different
+              renewable energy technologies are given, which is a metric representing the average energy production costs over the lifetime of a powerplant. </p>
+
+          <table style="width: auto;">
+                <tr style="font-weight: 500">
+                  <td> Technology </td>
+                  <td> LCOE 2025, global average [$/MWh]; from [8] </td>
+                </tr>
+                <tr>
+                  <td >Wind, Onshore</td>
+                  <td> 33 </td>
+                </tr>
+                <tr>
+                  <td >Solar PV</td>
+                  <td> 44 </td>
+                </tr>
+                <tr>
+                  <td >Solar PV + BESS</td>
+                  <td> 54 - 82 (high-quality sites) </td>
+                </tr>
+                <tr>
+                  <td >Hydropower </td>
+                  <td>  62 </td>
+                </tr>
+                <tr>
+                  <td >Wind, Offshore</td>
+                  <td> 78 </td>
+                </tr>
+                <tr>
+                  <td >Geothermal</td>
+                  <td>  89 </td>
+                </tr>
+                <tr>
+                  <td >Solar CSP</td>
+                  <td> 115 </td>
+                </tr>
+            </table>       
+
+            <p> <span class="standout">Note</span> The technical feasibility of coupling these energy sources with the non-fossil production processes (overlapping 
+              temperature ranges, process implementation based on existing technology, etc.) is not considered here.</p>
+
+            <p> We can see that for all commodities besides steel, global-average renewable energy LCOE are barely within the break-even price ranges. In fact, only onshore wind
+                and in some cases solar PV seem realistically cheap enough to support non-fossil commodity break-even under the most idealized economic scenario. Remember that it was 
+                assumed that no other costs besides energy input are relevant; considering hardware CAPEX, maintenance need, financing costs etc. will put even more pressure on LCOE 
+                even if energy input stays the major cost driver in energy-intensive industries. </p> 
+            
+            <p> Furthermore, we have to keep in mind that solar and wind are intermittent energy sources which increase effective LCOE through secondary effects: you either require
+                additional energy storage to firm the power supply (supply shifting), or deploy flexible production processes that are (1) capable of 
+                ramping according to renewable power availability (demand shifting) and (2) can compensate the resulting low capacity factor (basically low average power to installed peak power) with 
+                sufficiently cheap hardware. Otherwise, LCOE will explode from low equipment utilization. Both approaches are challenging and more costly than nameplate solar/wind LCOE. </p>
+            
+            <p> These finding need more nuance but point into an important direction: non-fossil commodities will have a very hard time becoming competitive with fossil commodities
+                even in regions with the lowest possible LCOE of renewable energy. Further decreases in LCOE are possible but limited, learning rates for key technologies are already declining
+                and we should not forget that historically low prices of solar, BESS and other power equipment are, to a large part, driven by unsustainable competition and overcapacity in China. 
+                It is not safe to assume that LCOE of renewable power will continue to decrease substantially in the foreseeable future. </p>
+
+
+            <h2> Beyond LCOE: cheating with market price arbitrage </h2>
+
+            <p> Assessing economic viability only by LCOE is insufficient. It works for islanded projects where e.g. solar and/or wind feed a process plant directly without a 
+                grid connection, so the full LCOE must be recovered by the process plant's operation. However, adding a grid connection unlocks additional value streams and may
+                push effective energy prices below the LCOE. The reason: market price arbitrage. </p>
+
+            <p> Energy market prices fluctuate over the course of a day due to societal activity (demand) and energy supply patterns. If renewable power is either baseload (like 
+                geothermal) or can be supply-shifted (like solar/wind with BESS), it can be sold at very high margins during high price hours. These margings can be high
+                enough to make an energy project profitable even if it sells power below LCOE during low-price hours. This arbitrage business can stabilize energy prices 
+                at levels sometimes far below the nameplate LCOE for a few hours every day. If you have a flexible and sufficiently low-CAPEX process that 
+                draws power only during those few extremely cheap hours, you may be able to break even with fossils even in regions with relatively high LCOE. This arbitrage opportunity 
+                of course decreases the more storage is operated and demand-shifting happens in the market (self-cannibalization), but there will always be a certain 
+                daily fluctuation of prices that can be exploited.</p>
+
+            <p> As beneficial as a grid connection can be, we must not delude ourselves about secondary costs: systemic costs arising from e.g. grid extension needs and seasonality are often ignored when discussing 
+                how cheap renewable energy can be, added storage for supply shifting increases prices, and plants run as demand shifting assets may never be cheap enough to operate sustainably 
+                at low capacity factors. The challenge of non-fossile commodities breaking even with fossil alternatives is enormous and may never be realized on scale
+                without government intervention.</p>
+
+            <h2> It is unstable, but break-even is not always necessary</h2>
+
+            <p> However, there are a few (not so small) niches where a certain non-fossil premium may be acceptable. The reason is that in these cases commodity prices have only a
+                rather small influence on the end-customer price and small increases won't substantially impact demand, yet unlock significant benefits in domestic supply security,
+                protection of heavy industry blue collar jobs, and emission mitigation. </p>
+
+            <p> The steel sector is the prime example and particularly interesting given that above back-of-a-napkin analysis identified it as the probably only sector with a realistic 
+                chance of economic break-even. Studies [7, p.2ff] found that additional costs from using green steel could vanish or at least be rather insignificant for the automotive 
+                sector (c. 12% of global steel demand), buildings and infrastructure (c. 52%), and potentially shipbuilding (c. 3%) if green hydrogen costs about 3 USD/kg or less.
+                With a typical energy need of about 50 MWh/t for hydrogen production this equals about 60 USD/MWh power prices, ignoring all other production costs beyond energy. 
+                Looking at the price discussion above, the hydrogen route is still very challenging economically but not impossible under the best circumstances.
+                But it also shows how far off actual costs can be from the theoretical optimum. </p>
+
+            <p> The caveat with all this is that it likely won't happen without regulation, companies are profit-driven and will tend to use the cheapest raw materials available. 
+                In this rare case, regulatory requirements for local production content is sensible and won't hurt the domestic customers or global exports significantly yet achieve all 
+                environmental and strategic policy goals. A small carbon tax may also tip the scale towards non-fossil processes but should be used with caution to avoid catastrophic side 
+                effects in neighboring sectors with higher sensitivity to commodity prices. </p>
+
+            <h2> What about sectors where energy costs have a high impact on end product costs? </h2>
+
+            <p> Here is where it gets tricky. A good example for such a case are nitrogen-based fertilizers, which cost is dominated by the cost of ammonia. 
+                For sectors like this, "just stop using oil and gas", as some radical climate activists want, will not work for most regions of the world without significant societal fallout: 
+                rising domestic prices on one hand and lower export competitiveness and thereby income on the other, hitting consumers twice. </p>
+
+            <p> The same is true for excessive carbon taxes or carbon border adjustment mechanisms (CBAM). They may help to make non-fossil commodities cheaper than fossil counterparts on
+                a regional or country level but at the same time raise the absolute price level and drive inflation, similarly affecting consumers and exports. Although unintended, the currently 
+                very high fossil energy prices in Europe due to supply chain disruptions create a similar effect. They help cleantech solutions become competitive in relative comparison and locally, but don't 
+                help society overall. Carbon taxes and CBAM, in my opinion, make only sense in very moderate amounts to help tip the scale towards non-fossil commodities which were close to break-even already.
+                A globally harmonized carbon taxation that properly reflects environmental externalities seems unlikely, as the following dilemma shows:</p>
+
+            <p> For highly energy-intensive industries where domestic power will realistically not be cheap enough for competitive non-fossil commodities, governments face though choices: 
+                if you have abundent and low-cost fossil energy sources like the USA (gas) or China (coal), you can skip emission mitigation at least for the moment to ensure competitive sovereign supply 
+                of key cost-sensitive commodities, benefiting consumers and exports but hurting the climate. Otherwise, you've to accept that imports from low-LCOE countries are unavoidable and new
+                dependencies, similar to but different to the current global oil and gas markets, will emerge. This comes with the high long-term risk that more and more other downstream industries 
+                relocate to these primary ecosystems too and you loose most of the value chain in this sector altogether. Local content requirements for manufacturing may help to keep at least some local jobs and 
+                level of sovereign supply but the export value of this energy-intensive industry may largely disappear with time. 
+                
+
+            <h2> Closing thoughts | Where does this leave us? </h2>
+             
+            <p> From my perspective, the discussion above leads to a few conclusions that politicians and society overall should be honest and serious about because the 
+                implications will neither be easy nor comfortable: </p>
+
+            <p> <span style="font-weight: 700;">First</span>, make energy as low-cost and abundant as possible. It extends the range of economically feasible non-fossil production and promotes economic activity 
+                overall. Wealth comes from abundant goods and services, which require work (in a physics sense) is performed. Simplified: more goods produced and services offered = more work performed
+                = more energy consumed. It follows what has often been said: there are no wealthy but low-energy countries. This means the right technology mix, and this may differ by region and include smaller
+                shares of nuclear energy in high-latitude regions, tax and grid fee regulation, and market design needs to be implemented with this primary goal in mind. No wealth, no societal acceptance of change. </p>
+            
+            <p> <span style="font-weight: 700;">Second</span>, accept that, if at all, only the few lowest-cost and most renewable-rich countries in the world and for sure those with cheap domestic fossil resources will have the means to produce certain energy-intensive 
+                commodities competitively at world scale. If you're not one of them, you must partner up with friendly countries as strategic suppliers and hope for good long-term relations. I see a high chance
+                that the world will experience a new wave of global large-scale European military activity to secure naval transport routes and strategic production assets for energy-intensive commodities 
+                in partner countries, maybe even the establishemnt of de-facto energy colonies to avoid strategic dependencies.</p>
+
+            <p> <span style="font-weight: 700;">Third</span>, and much more importantly, prioritize innovation at all cost. Only through an economy focused on higher-value goods (like cars and advanced machinery) that provide benefits far beyond 
+                their direct material value can a society escape the energy cost and commodities trap. This focus on radical innovation ironically helps regions with high energy costs secure domestic production of 
+                non-fossil/sovereign commodities: the larger the added value is compared to the material value (aka the more innovative the product), the less sensitive is the end-product price to raw material prices.
+                Rush towards the future to secure the legacy! Furthermore, making the use of cost-critical commodities more efficient (like pairing ammonia with bio-fertilizers) will lower
+                price pressures further. Maybe you can even eliminate their demand through the introduction of radically new approaches, which of cause need to see very fast adoption to be effective. 
+                I think there has hardly ever been a better case for pushing onwards and deploying innovation as radical and fast as possible, but unfortunately, many Europeans who need this more than anyone else have not learned 
+                this lesson and are still skeptical or outright hostile towards non-incremental change. China learned this lesson long ago. </p>
+
+            <p> <span style="font-weight: 700;">Fourth</span>, be transparent and honest about the fact that the world will never be perfect: some industries may need permanent and large-scale subsidies to exist locally,
+                but their strategic value justifies cross-financing them. Again, innovation is needed to generate the required liquidity. Still, be realistic about what regulation can achieve.
+                Carbon taxes and CBAM can tip the scale in some cases but may cause much greater harm if implemented excessively without a proper global framework. You may even have to admit
+                that some sectors cannot run on non-fossile resources at a global scale anytime soon, which in my opinion includes almost all carbon-based commodities. Think like a good entrepreneur, 
+                avoid those high effort but low impact challenges and accept ongoing CO2 emissions. Luckily, most of the biggest CO2 emitting sectors are overall easy to defossilize at competitive 
+                prices with largely mature and existing technology: most of transport and mobility, low-temperature heating, and electricity consumption. Stop demonstrating and blockading, start scaling and deploying.
+            </p>
+
+            <p> <span style="font-weight: 700;">Fifth</span> and finally, look beyond conventional electro- and thermochemical processing for non-fossil commodities with high price pressure: consider the wide expansion 
+                of waste recovery and bio-based pathways as alternative, they have been implicitly excluded from above analysis. The appeal is simple:
+                If instead of producing non-fossil methanol with CO2 from costly direct air capture and water electrolysis through established syngas processes, you could use 
+                agricultural waste or, very science fiction but exciting, large-scale offshore farmed algae as core ingredient. Both already contain energy-rich carbon compounds created by
+                photosynthesis, and only relatively little infrastructure and low-temperature energy input may be required for further downstream processing. The key question here becomes
+                if those material inputs can be sourced cheaply enough and at scale, which has obvious limitations for waste streams and is unproven for offshore algea farms. But the potential is real and,
+                once again, a relentless push for innovation is the only way to make it possible.
+
+            <h2> References </h2>
+            <p> [1] D.R. Lide | CRC Handbook of Chemistry and Physics, 85th Edition. CRC Press. Boca Ranton (USA). 2005. </p>
+            <p> [2] J.T. Edwards | Jet Fuel Properties, Interim Report. Air Force Research Laboratory (USA). 2020. <a target="_blank" href="https://ntrl.ntis.gov/NTRL/dashboard/searchResults/titleDetail/AD1093317.xhtml">(Source↗)</a> </p>
+            <p> [3] R.J. Fruehan | Theoretical Minimum Energies to Produce Steel for Selected Conditions. Carnegie Mellon Universty. Pittsburgh (USA). 2000. <a target="_blank" href="https://digital.library.unt.edu/ark:/67531/metadc722981/">(Source↗)</a> </p>
+            <p> [4] IRENA and AEA | Innovation Outlook: Renewable Ammonia. Ammonia Energy Association. Abu Dhabi (UAE), Brooklyn (USA). 2022. <a target="_blank" href="https://www.irena.org/publications/2022/May/Innovation-Outlook-Renewable-Ammonia">(Source↗)</a> </p>
+            <p> [5] IRENA | Innovation Outlook: Renewable Methanol. International Energy Agency. Abu Dhabi (UAE). 2022. <a target="_blank" href="https://www.irena.org/publications/2021/Jan/Innovation-Outlook-Renewable-Methanol">(Source↗)</a> </p>
+            <p> [6] B. M'Barek and A. Hasanbeigi | Global Steel Production Costs. Transition Zero, Global Efficiency Intelligence. 2022. <a target="_blank" href="https://www.globalefficiencyintel.com/global-steel-production-costs-report">(Source↗)</a> </p>
+            <p> [7] A. Hasanbeigi | Green Steel Economics. Global Efficiency Intelligence, Transition Asia. USA, China, Norway, South Korea, 2024. <a target="_blank" href="https://www.globalefficiencyintel.com/green-steel-economics">(Source↗)</a> </p>
+            <p> [8] IRENA | Renewable Power Generation Costs in 2025. International Renewable Energy Agency, Abu Dhabi (UAE), 2026. <a target="_blank" href="https://www.irena.org/Publications/2026/Jul/Renewable-Power-Generation-Costs-in-2025">(Source↗)</a> </p>
+            <p> [9] IEA | Are conditions right for biojet to take flight over the next five years? Online, 2021. <a target="_blank" href="https://www.iea.org/articles/are-conditions-right-for-biojet-to-take-flight-over-the-next-five-years">(Source↗)</a> </p>
+        </main> 
+    </body>
+</html>

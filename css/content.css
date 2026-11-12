@@ -14,8 +14,8 @@ h3, ul {
 }
 
 table {
-    width: calc(100% + 2rem);
-    margin: 0 -1rem;
+    width: 100%;
+    margin: 0 0 1rem -1rem;
     border-collapse: separate;
     border-spacing: 1rem 0;
 }
